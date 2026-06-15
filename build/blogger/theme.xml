@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html b:css="false" b:defaultwidgetversion="2" b:layoutsversion="3" b:responsive="true" expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head><script type="text/javascript">(function() {
+  var cachedTheme = localStorage.getItem(&apos;antinna-theme&apos;);
+  var systemPrefersDark = window.matchMedia(&apos;(prefers-color-scheme: dark)&apos;).matches;
+
+  if (cachedTheme === &apos;dark&apos; || (!cachedTheme &amp;&amp; systemPrefersDark)) {
+    document.documentElement.classList.add(&apos;dark&apos;);
+  } else {
+    document.documentElement.classList.remove(&apos;dark&apos;);
+  }
+})();
+</script><script>
+  cookieOptions = {
+ close:&quot; Got it! &quot;,
+learn: &quot;Privacy Policy&quot;,
+link: &quot;<data:blog.canonicalHomepageUrl/>p/privacy.html&quot;
+  };
+</script><meta content="width=device-width, initial-scale=1.0" name="viewport"/><b:include name="all-head-content" data="blog"/><meta property="og:type" content="website"/><meta name="geo.region" content="IN-HR"/><meta name="contact.phone" content="+918607573994"/><link expr:href="data:blog.homepageUrl.canonical" expr:title="data:messages.home" rel="home"/><link expr:href="data:blog.homepageUrl.canonical path &quot;search&quot;" expr:title="data:messages.search" rel="search"/><b:if cond="!data:blog.adultContent"><meta name="rating" content="general"/></b:if><b:if cond="data:blog.adultContent"><meta name="rating" content="adult"/></b:if><b:tag name="link" expr:href="data:view.url params {m: 1}" media="only screen and (max-width: 640px)" rel="alternate" cond="!data:blog.isMobileRequest and data:view.url ==  data:view.url.canonical"/><b:tag name="link" expr:href="data:widgets.Blog.first.posts[0].featuredImage resizeImage 1600" rel="image_src" cond="data:view.isMultipleItems and data:widgets.Blog.first.posts[0].featuredImage"/><b:tag name="link" expr:href="data:view.featuredImage resizeImage 1600" rel="image_src" cond="data:view.isSingleItem and data:view.featuredImage"/><b:if cond="data:blog.analyticsAccountNumber"><b:include name="google-analytics" data="blog"/></b:if><b:if cond="data:view.isHomepage"><script type="application/ld+json">
+{
+  &quot;@context&quot;: &quot;http://schema.org&quot;,
+  &quot;@type&quot;: &quot;WebSite&quot;,
+  &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+  &quot;description&quot;: &quot;<data:view.description.escaped/>&quot;,
+  &quot;url&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+  &quot;potentialAction&quot;: {
+    &quot;@type&quot;: &quot;SearchAction&quot;,
+    &quot;target&quot;: &quot;<data:blog.canonicalHomepageUrl/>search?q={search_term_string}&quot;,
+    &quot;query-input&quot;: &quot;required name=search_term_string&quot;
+  }
+}
+</script></b:if><script type="application/ld+json">
+{
+  &quot;@context&quot;: &quot;http://schema.org&quot;,
+  &quot;@type&quot;: &quot;BreadcrumbList&quot;,
+  &quot;@id&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+  &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+  &quot;itemListElement&quot;: [
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 1,
+      &quot;name&quot;: &quot;Home&quot;,
+      &quot;item&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 2,
+      &quot;name&quot;: &quot;About&quot;,
+      &quot;item&quot;: &quot;<data:blog.canonicalHomepageUrl/>#about&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;ListItem&quot;,
+      &quot;position&quot;: 3,
+      &quot;name&quot;: &quot;Contact Us&quot;,
+      &quot;item&quot;: &quot;<data:blog.canonicalHomepageUrl/>#contact&quot;
+    }
+  ]
+}
+</script><script type="application/ld+json">
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;LocalBusiness&quot;,
+  &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+  &quot;url&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+  &quot;logo&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;,
+  &quot;image&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;,
+  &quot;sameAs&quot;: [
+    &quot;https://www.facebook.com/profile.php?id=100082961891641&quot;,
+    &quot;https://www.youtube.com/@Antinna&quot;,
+    &quot;https://www.instagram.com/antinna.yt&quot;,
+    &quot;https://github.com/antinna&quot;,
+    &quot;https://play.google.com/store/apps/dev?id=7417258411166270372&quot;
+  ],
+  &quot;contactPoint&quot;: {
+    &quot;@type&quot;: &quot;ContactPoint&quot;,
+    &quot;telephone&quot;: &quot;+918607573994&quot;,
+    &quot;contactType&quot;: &quot;customer service&quot;,
+    &quot;email&quot;: &quot;contact@antinna.in&quot;,
+    &quot;availableLanguage&quot;: [&quot;en&quot;, &quot;hi&quot;]
+  }
+}
+</script><script type="application/ld+json">
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;ProfessionalService&quot;,
+  &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+  &quot;image&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;,
+  &quot;@id&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+  &quot;url&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+  &quot;telephone&quot;: &quot;+918607573994&quot;,
+  &quot;priceRange&quot;: &quot;$$&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;streetAddress&quot;: &quot;H.No. 42, Village:- Todi&quot;,
+    &quot;addressLocality&quot;: &quot;Charkhi Dadri&quot;,
+    &quot;addressRegion&quot;: &quot;Haryana&quot;,
+    &quot;postalCode&quot;: &quot;127310&quot;,
+    &quot;addressCountry&quot;: &quot;IN&quot;
+  },
+  &quot;geo&quot;: {
+    &quot;@type&quot;: &quot;GeoCoordinates&quot;,
+    &quot;latitude&quot;: 28.527867,
+    &quot;longitude&quot;: 76.083600
+  },
+  &quot;openingHoursSpecification&quot;: {
+    &quot;@type&quot;: &quot;OpeningHoursSpecification&quot;,
+    &quot;dayOfWeek&quot;: [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;],
+    &quot;opens&quot;: &quot;00:00&quot;,
+    &quot;closes&quot;: &quot;23:59&quot;
+  },
+  &quot;sameAs&quot;: [
+    &quot;https://www.facebook.com/profile.php?id=100082961891641&quot;,
+    &quot;https://www.instagram.com/antinna.yt/&quot;,
+    &quot;https://youtube.com/antinna&quot;,
+    &quot;https://github.com/antinna&quot;,
+    &quot;https://play.google.com/store/apps/dev?id=7417258411166270372&quot;,
+    &quot;<data:blog.canonicalHomepageUrl/>&quot;
+  ]
+}
+</script><script type="application/ld+json">
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Project&quot;,
+  &quot;name&quot;: &quot;<data:blog.title/>&quot;,
+  &quot;url&quot;: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
+  &quot;logo&quot;: &quot;<data:blog.blogspotFaviconUrl/>&quot;,
+  &quot;contactPoint&quot;: [
+    {
+      &quot;@type&quot;: &quot;ContactPoint&quot;,
+      &quot;telephone&quot;: &quot;+918607573994&quot;,
+      &quot;contactType&quot;: &quot;Technical Support&quot;,
+      &quot;areaServed&quot;: [&quot;US&quot;,&quot;GB&quot;,&quot;CA&quot;,&quot;AF&quot;,&quot;155&quot;,&quot;039&quot;,&quot;154&quot;,&quot;151&quot;,&quot;150&quot;,&quot;145&quot;,&quot;034&quot;,&quot;035&quot;,&quot;030&quot;,&quot;143&quot;,&quot;142&quot;,&quot;419&quot;,&quot;015&quot;,&quot;002&quot;,&quot;ZM&quot;,&quot;YE&quot;,&quot;EH&quot;,&quot;ZW&quot;,&quot;WF&quot;,&quot;VN&quot;,&quot;VE&quot;,&quot;AX&quot;,&quot;AL&quot;,&quot;DZ&quot;,&quot;AS&quot;,&quot;AD&quot;,&quot;AO&quot;,&quot;AQ&quot;,&quot;AI&quot;,&quot;AG&quot;,&quot;AW&quot;,&quot;AM&quot;,&quot;AR&quot;,&quot;AT&quot;,&quot;AU&quot;,&quot;AZ&quot;,&quot;BS&quot;,&quot;BH&quot;,&quot;BD&quot;,&quot;BB&quot;,&quot;BY&quot;,&quot;BE&quot;,&quot;BZ&quot;,&quot;BJ&quot;,&quot;BM&quot;,&quot;BT&quot;,&quot;BO&quot;,&quot;BQ&quot;,&quot;BA&quot;,&quot;BW&quot;,&quot;VA&quot;,&quot;VU&quot;,&quot;UZ&quot;,&quot;UY&quot;,&quot;UM&quot;,&quot;AE&quot;,&quot;UA&quot;,&quot;TV&quot;,&quot;VI&quot;,&quot;UG&quot;,&quot;TC&quot;,&quot;TT&quot;,&quot;TN&quot;,&quot;TR&quot;,&quot;TM&quot;,&quot;TG&quot;,&quot;TK&quot;,&quot;TO&quot;,&quot;TH&quot;,&quot;TZ&quot;,&quot;TJ&quot;,&quot;TW&quot;,&quot;CH&quot;,&quot;SY&quot;,&quot;SE&quot;,&quot;BR&quot;,&quot;BV&quot;,&quot;IO&quot;,&quot;VG&quot;,&quot;BN&quot;,&quot;BG&quot;,&quot;BF&quot;,&quot;BI&quot;,&quot;KH&quot;,&quot;CM&quot;,&quot;CV&quot;,&quot;KY&quot;,&quot;CF&quot;,&quot;TD&quot;,&quot;CL&quot;,&quot;CX&quot;,&quot;CN&quot;,&quot;CC&quot;,&quot;CO&quot;,&quot;KM&quot;,&quot;CK&quot;,&quot;HR&quot;,&quot;CR&quot;,&quot;CU&quot;,&quot;CW&quot;,&quot;CY&quot;,&quot;CZ&quot;,&quot;CD&quot;,&quot;DK&quot;,&quot;DJ&quot;,&quot;DM&quot;,&quot;DO&quot;,&quot;TL&quot;,&quot;EG&quot;,&quot;SV&quot;,&quot;EC&quot;,&quot;GQ&quot;,&quot;EE&quot;,&quot;ER&quot;,&quot;ET&quot;,&quot;FK&quot;,&quot;FO&quot;,&quot;FJ&quot;,&quot;FI&quot;,&quot;GF&quot;,&quot;FR&quot;,&quot;PF&quot;,&quot;TF&quot;,&quot;GA&quot;,&quot;GM&quot;,&quot;SZ&quot;,&quot;SR&quot;,&quot;SJ&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;ES&quot;,&quot;LK&quot;,&quot;KR&quot;,&quot;GS&quot;,&quot;ZA&quot;,&quot;SO&quot;,&quot;SB&quot;,&quot;SI&quot;,&quot;SK&quot;,&quot;SG&quot;,&quot;SX&quot;,&quot;SL&quot;,&quot;SC&quot;,&quot;SN&quot;,&quot;SA&quot;,&quot;RS&quot;,&quot;PM&quot;,&quot;VC&quot;,&quot;SM&quot;,&quot;WS&quot;,&quot;ST&quot;,&quot;GE&quot;,&quot;DE&quot;,&quot;GH&quot;,&quot;GI&quot;,&quot;GR&quot;,&quot;GL&quot;,&quot;GD&quot;,&quot;GP&quot;,&quot;GT&quot;,&quot;MF&quot;,&quot;LC&quot;,&quot;BL&quot;,&quot;SH&quot;,&quot;KN&quot;,&quot;RW&quot;,&quot;RO&quot;,&quot;RU&quot;,&quot;RE&quot;,&quot;CG&quot;,&quot;PT&quot;,&quot;PL&quot;,&quot;PR&quot;,&quot;QA&quot;,&quot;PH&quot;,&quot;PN&quot;,&quot;GN&quot;,&quot;GG&quot;,&quot;GU&quot;,&quot;GW&quot;,&quot;GY&quot;,&quot;HT&quot;,&quot;HM&quot;,&quot;HN&quot;,&quot;HK&quot;,&quot;HU&quot;,&quot;IS&quot;,&quot;ID&quot;,&quot;IN&quot;,&quot;IR&quot;,&quot;IQ&quot;,&quot;IE&quot;,&quot;IM&quot;,&quot;IT&quot;,&quot;IL&quot;,&quot;JP&quot;,&quot;JO&quot;,&quot;JM&quot;,&quot;JE&quot;,&quot;CI&quot;,&quot;KW&quot;,&quot;KG&quot;,&quot;LA&quot;,&quot;XK&quot;,&quot;KI&quot;,&quot;KE&quot;,&quot;KZ&quot;,&quot;LV&quot;,&quot;LB&quot;,&quot;LS&quot;,&quot;LY&quot;,&quot;LR&quot;,&quot;LT&quot;,&quot;LU&quot;,&quot;LI&quot;,&quot;PY&quot;,&quot;PE&quot;,&quot;PG&quot;,&quot;PA&quot;,&quot;PW&quot;,&quot;PS&quot;,&quot;PK&quot;,&quot;NO&quot;,&quot;OM&quot;,&quot;MP&quot;,&quot;KP&quot;,&quot;NI&quot;,&quot;NE&quot;,&quot;NG&quot;,&quot;NU&quot;,&quot;NF&quot;,&quot;NZ&quot;,&quot;NA&quot;,&quot;NP&quot;,&quot;NL&quot;,&quot;NR&quot;,&quot;NC&quot;,&quot;MM&quot;,&quot;MZ&quot;,&quot;MS&quot;,&quot;MN&quot;,&quot;ME&quot;,&quot;MA&quot;,&quot;MD&quot;,&quot;MC&quot;,&quot;FM&quot;,&quot;MX&quot;,&quot;MR&quot;,&quot;MU&quot;,&quot;YT&quot;,&quot;MQ&quot;,&quot;MH&quot;,&quot;MV&quot;,&quot;ML&quot;,&quot;MT&quot;,&quot;MW&quot;,&quot;MG&quot;,&quot;MY&quot;,&quot;MO&quot;,&quot;MK&quot;],
+      &quot;availableLanguage&quot;: [&quot;en&quot;,&quot;Gujarati&quot;,&quot;Hindi&quot;,&quot;Tamil&quot;,&quot;Telugu&quot;,&quot;Urdu&quot;,&quot;Panjabi&quot;]
+    },
+    {
+      &quot;@type&quot;: &quot;ContactPoint&quot;,
+      &quot;telephone&quot;: &quot;+918607573994&quot;,
+      &quot;contactType&quot;: &quot;customer service&quot;,
+      &quot;areaServed&quot;: [&quot;US&quot;,&quot;GB&quot;,&quot;CA&quot;,&quot;AF&quot;,&quot;155&quot;,&quot;039&quot;,&quot;154&quot;,&quot;151&quot;,&quot;150&quot;,&quot;145&quot;,&quot;034&quot;,&quot;035&quot;,&quot;030&quot;,&quot;143&quot;,&quot;142&quot;,&quot;419&quot;,&quot;015&quot;,&quot;002&quot;,&quot;ZM&quot;,&quot;YE&quot;,&quot;EH&quot;,&quot;ZW&quot;,&quot;WF&quot;,&quot;VN&quot;,&quot;VE&quot;,&quot;AX&quot;,&quot;AL&quot;,&quot;DZ&quot;,&quot;AS&quot;,&quot;AD&quot;,&quot;AO&quot;,&quot;AQ&quot;,&quot;AI&quot;,&quot;AG&quot;,&quot;AW&quot;,&quot;AM&quot;,&quot;AR&quot;,&quot;AT&quot;,&quot;AU&quot;,&quot;AZ&quot;,&quot;BS&quot;,&quot;BH&quot;,&quot;BD&quot;,&quot;BB&quot;,&quot;BY&quot;,&quot;BE&quot;,&quot;BZ&quot;,&quot;BJ&quot;,&quot;BM&quot;,&quot;BT&quot;,&quot;BO&quot;,&quot;BQ&quot;,&quot;BA&quot;,&quot;BW&quot;,&quot;VA&quot;,&quot;VU&quot;,&quot;UZ&quot;,&quot;UY&quot;,&quot;UM&quot;,&quot;AE&quot;,&quot;UA&quot;,&quot;TV&quot;,&quot;VI&quot;,&quot;UG&quot;,&quot;TC&quot;,&quot;TT&quot;,&quot;TN&quot;,&quot;TR&quot;,&quot;TM&quot;,&quot;TG&quot;,&quot;TK&quot;,&quot;TO&quot;,&quot;TH&quot;,&quot;TZ&quot;,&quot;TJ&quot;,&quot;TW&quot;,&quot;CH&quot;,&quot;SY&quot;,&quot;SE&quot;,&quot;BR&quot;,&quot;BV&quot;,&quot;IO&quot;,&quot;VG&quot;,&quot;BN&quot;,&quot;BG&quot;,&quot;BF&quot;,&quot;BI&quot;,&quot;KH&quot;,&quot;CM&quot;,&quot;CV&quot;,&quot;KY&quot;,&quot;CF&quot;,&quot;TD&quot;,&quot;CL&quot;,&quot;CX&quot;,&quot;CN&quot;,&quot;CC&quot;,&quot;CO&quot;,&quot;KM&quot;,&quot;CK&quot;,&quot;HR&quot;,&quot;CR&quot;,&quot;CU&quot;,&quot;CW&quot;,&quot;CY&quot;,&quot;CZ&quot;,&quot;CD&quot;,&quot;DK&quot;,&quot;DJ&quot;,&quot;DM&quot;,&quot;DO&quot;,&quot;TL&quot;,&quot;EG&quot;,&quot;SV&quot;,&quot;EC&quot;,&quot;GQ&quot;,&quot;EE&quot;,&quot;ER&quot;,&quot;ET&quot;,&quot;FK&quot;,&quot;FO&quot;,&quot;FJ&quot;,&quot;FI&quot;,&quot;GF&quot;,&quot;FR&quot;,&quot;PF&quot;,&quot;TF&quot;,&quot;GA&quot;,&quot;GM&quot;,&quot;SZ&quot;,&quot;SR&quot;,&quot;SJ&quot;,&quot;SD&quot;,&quot;SS&quot;,&quot;ES&quot;,&quot;LK&quot;,&quot;KR&quot;,&quot;GS&quot;,&quot;ZA&quot;,&quot;SO&quot;,&quot;SB&quot;,&quot;SI&quot;,&quot;SK&quot;,&quot;SG&quot;,&quot;SX&quot;,&quot;SL&quot;,&quot;SC&quot;,&quot;SN&quot;,&quot;SA&quot;,&quot;RS&quot;,&quot;PM&quot;,&quot;VC&quot;,&quot;SM&quot;,&quot;WS&quot;,&quot;ST&quot;,&quot;GE&quot;,&quot;DE&quot;,&quot;GH&quot;,&quot;GI&quot;,&quot;GR&quot;,&quot;GL&quot;,&quot;GD&quot;,&quot;GP&quot;,&quot;GT&quot;,&quot;MF&quot;,&quot;LC&quot;,&quot;BL&quot;,&quot;SH&quot;,&quot;KN&quot;,&quot;RW&quot;,&quot;RO&quot;,&quot;RU&quot;,&quot;RE&quot;,&quot;CG&quot;,&quot;PT&quot;,&quot;PL&quot;,&quot;PR&quot;,&quot;QA&quot;,&quot;PH&quot;,&quot;PN&quot;,&quot;GN&quot;,&quot;GG&quot;,&quot;GU&quot;,&quot;GW&quot;,&quot;GY&quot;,&quot;HT&quot;,&quot;HM&quot;,&quot;HN&quot;,&quot;HK&quot;,&quot;HU&quot;,&quot;IS&quot;,&quot;ID&quot;,&quot;IN&quot;,&quot;IR&quot;,&quot;IQ&quot;,&quot;IE&quot;,&quot;IM&quot;,&quot;IT&quot;,&quot;IL&quot;,&quot;JP&quot;,&quot;JO&quot;,&quot;JM&quot;,&quot;JE&quot;,&quot;CI&quot;,&quot;KW&quot;,&quot;KG&quot;,&quot;LA&quot;,&quot;XK&quot;,&quot;KI&quot;,&quot;KE&quot;,&quot;KZ&quot;,&quot;LV&quot;,&quot;LB&quot;,&quot;LS&quot;,&quot;LY&quot;,&quot;LR&quot;,&quot;LT&quot;,&quot;LU&quot;,&quot;LI&quot;,&quot;PY&quot;,&quot;PE&quot;,&quot;PG&quot;,&quot;PA&quot;,&quot;PW&quot;,&quot;PS&quot;,&quot;PK&quot;,&quot;NO&quot;,&quot;OM&quot;,&quot;MP&quot;,&quot;KP&quot;,&quot;NI&quot;,&quot;NE&quot;,&quot;NG&quot;,&quot;NU&quot;,&quot;NF&quot;,&quot;NZ&quot;,&quot;NA&quot;,&quot;NP&quot;,&quot;NL&quot;,&quot;NR&quot;,&quot;NC&quot;,&quot;MM&quot;,&quot;MZ&quot;,&quot;MS&quot;,&quot;MN&quot;,&quot;ME&quot;,&quot;MA&quot;,&quot;MD&quot;,&quot;MC&quot;,&quot;FM&quot;,&quot;MX&quot;,&quot;MR&quot;,&quot;MU&quot;,&quot;YT&quot;,&quot;MQ&quot;,&quot;MH&quot;,&quot;MV&quot;,&quot;ML&quot;,&quot;MT&quot;,&quot;MW&quot;,&quot;MG&quot;,&quot;MY&quot;,&quot;MO&quot;,&quot;MK&quot;],
+      &quot;availableLanguage&quot;: [&quot;en&quot;,&quot;Gujarati&quot;,&quot;Hindi&quot;,&quot;Tamil&quot;,&quot;Telugu&quot;,&quot;Urdu&quot;,&quot;Panjabi&quot;]
+    }
+  ],
+  &quot;sameAs&quot;: [
+    &quot;https://www.facebook.com/profile.php?id=100082961891641&quot;,
+    &quot;https://www.instagram.com/antinna.yt/&quot;,
+    &quot;https://youtube.com/antinna&quot;,
+    &quot;https://github.com/antinna&quot;,
+    &quot;https://play.google.com/store/apps/dev?id=7417258411166270372&quot;,
+    &quot;<data:blog.canonicalHomepageUrl/>&quot;
+  ]
+}
+</script><meta name="subject" expr:content="(data:view.isMultipleItems ? data:blog.pageTitle : data:view.title).escaped"/><b:if cond="data:blog.metaDescription"><meta name="description" expr:content="data:blog.metaDescription"/></b:if><title><data:blog.title.escaped/><b:if cond="data:view.isArchive">:<data:blog.pageName/>(<data:messages.archive/>)<b:elseif cond="data:view.isLabelSearch"/>:<data:blog.pageName/>(<data:messages.labels/>)<b:elseif cond="data:view.isSearch"/>:<data:messages.search/></b:if></title><!-- prettier-ignore --><b:skin><![CDATA[
+/*
+ * Variable definitions:
+ <Variable name="bgcolor" description="Page Background Color" type="color" default="#fff"/>
+ */
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM THEME VARIABLES
+   ========================================================================== */
+:root {
+    --bg-app: #ffffff;
+    --bg-surface: #f8f9fa;
+    --bg-panel: #1e293b;
+    --border-ui: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-light: #ffffff;
+    --color-accent: #2563eb;
+    --header-height: 64px;
+    --sidebar-width: 280px;
+}
+
+html.dark {
+    --bg-app: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-panel: #0f172a;
+    --border-ui: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --color-accent: #3b82f6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    overflow: hidden;
+    height: 100vh;
+}
+
+.ui-hidden { display: none !important; }
+
+.app-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* ==========================================================================
+   DESKTOP SIDEBAR PANEL STYLES & INTERIOR VIEWS SCROLL LAYER
+   ========================================================================== */
+#sidebar-drawer {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    background-color: var(--bg-panel);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    border-right: 1px solid var(--border-ui);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.sidebar-header {
+    height: var(--header-height);
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-logo { display: flex; align-items: center; gap: 0.75rem; }
+/* .brand-icon {
+    background-color: var(--color-accent); color: #ffffff; font-weight: 800;
+    width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 6px;
+} */
+
+.brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.brand-text { font-size: 1.15rem; font-weight: 700; }
+.btn-close-sidebar { display: none; background: transparent; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+.sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+ /* This targets only the first character of the element */
+  .nav-route-link::first-letter {
+    text-transform: uppercase;
+  }
+.sidebar-scroll-content::-webkit-scrollbar { width: 5px; }
+.sidebar-scroll-content::-webkit-scrollbar-thumb { background-color: rgba(255, 255, 255, 0.15); border-radius: 10px; }
+
+.desktop-nav-fallback { padding: 1.5rem 1.25rem 0.75rem 1.25rem; }
+.sidebar-static-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.sidebar-static-links li a {
+    display: block; color: rgba(255, 255, 255, 0.65); text-decoration: none;
+    padding: 0.65rem 0.85rem; border-radius: 8px; font-size: 0.95rem; font-weight: 500; transition: all 0.2s ease;
+}
+.sidebar-static-links li a:hover { background-color: rgba(255, 255, 255, 0.08); color: #ffffff; }
+.sidebar-static-links li a.active { background-color: var(--color-accent); color: #ffffff !important; font-weight: 600; }
+
+.sidebar-modules-area { padding: 0.5rem 1.25rem; }
+.sidebar-modules-section { padding: 0 !important; }
+.sidebar-legal-area { padding: 0.5rem 1.25rem; }
+.sidebar-legal-section { padding: 0 !important; }
+
+.module-wrapper { width: 100%; }
+.module-trigger {
+    width: 100%; background: transparent; border: none; color: white;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer; padding: 0.65rem 0.85rem;
+    border-radius: 8px; transition: background 0.2s;
+}
+.module-trigger:hover { background-color: rgba(255, 255, 255, 0.04); }
+
+.arrow-indicator { 
+    font-size: 0.85rem; 
+    display: inline-block; 
+    transform: rotate(-90deg);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+.arrow-indicator.initial-open { transform: rotate(0deg); }
+
+.module-dropdown-list {
+    list-style: none; margin-top: 0.25rem; padding-left: 0.75rem; overflow: hidden;
+    transition: max-height 0.25s ease-out; max-height: 250px;
+}
+.module-dropdown-list.ui-hidden { max-height: 0 !important; margin-top: 0; }
+.module-dropdown-list li a { display: block; color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.875rem; padding: 0.5rem 0.85rem; border-radius: 6px; }
+.module-dropdown-list li a:hover { color: white; background-color: rgba(255, 255, 255, 0.04); }
+.module-dropdown-list li a.active { color: #ffffff !important; font-weight: 600; background-color: rgba(255, 255, 255, 0.1); }
+
+.sidebar-social-wrapper {
+    display: flex; align-items: center; justify-content: flex-start; gap: 1.15rem;
+    padding: 1.5rem 1.25rem 0.5rem 1.25rem; margin-top: 0.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.social-icon-link { color: rgba(255, 255, 255, 0.5); display: inline-flex; align-items: center; justify-content: center; transition: color 0.2s, transform 0.2s; }
+.social-icon-link:hover { color: var(--color-accent); transform: translateY(-2px); }
+
+/* ==========================================================================
+   FIXED USER PROFILE ELEMENT ROW 
+   ========================================================================== */
+.avatar-footer-row {
+    min-height: 68px; height: 68px; background-color: rgba(15, 23, 42, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 0 1.15rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    position: relative; z-index: 10;
+}
+html.dark .avatar-footer-row { background-color: rgba(0, 0, 0, 0.2); }
+
+.avatar-left-info { display: flex; align-items: center; gap: 0.75rem; overflow: hidden; }
+.user-avatar-circle {
+    width: 36px; min-width: 36px; height: 36px; border-radius: 50%;
+    background-color: var(--color-accent); display: flex; align-items: center;
+    justify-content: center; color: #ffffff; font-weight: 700; font-size: 0.95rem;
+}
+.user-meta-strings { display: flex; flex-direction: column; overflow: hidden; }
+.user-display-name { font-size: 0.875rem; font-weight: 600; color: #ffffff; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.user-display-role { font-size: 0.75rem; color: rgba(255, 255, 255, 0.45); white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+.btn-settings-gear {
+    background: transparent; border: none; color: rgba(255, 255, 255, 0.5);
+    font-size: 1.35rem; cursor: pointer; display: flex; align-items: center;
+    justify-content: center; width: 32px; height: 32px; border-radius: 50%; transition: all 0.2s ease;
+}
+.btn-settings-gear:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.08); transform: rotate(30deg); }
+
+/* ==========================================================================
+   MAIN VIEWPORT STYLES & INTERACTIVE SEARCH HEADERS
+   ========================================================================== */
+.main-view-wrapper { flex: 1; display: flex; flex-direction: column; height: 100vh; background-color: var(--bg-surface); overflow: hidden; position: relative; }
+.top-navbar-header {
+    height: var(--header-height); min-height: var(--header-height); background-color: var(--bg-app);
+    border-bottom: 1px solid var(--border-ui); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.header-left, .header-right { display: flex; align-items: center; height: 100%; }
+
+.btn-hamburger {
+    background: transparent; border: none; color: var(--text-main); font-size: 1.4rem;
+    cursor: pointer; display: none; height: 40px; width: 40px; align-items: center; justify-content: center;
+}
+
+.header-center-search { flex: 1; display: flex; align-items: center; justify-content: center; }
+.search-container { position: relative; width: 100%; max-width: 20rem; }
+.search-icon { position: absolute; top: 50%; left: 0.75rem; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; align-items: center; }
+.search-icon svg { width: 1.25rem; height: 1.25rem; }
+.search-input {
+    width: 100%; background-color: var(--bg-surface); border: 2px solid transparent;
+    border-radius: 0.5rem; padding: 0.5rem 0.75rem 0.5rem 2.5rem; font-size: 0.875rem; color: var(--text-main); transition: all 0.2s; outline: none;
+}
+html.dark .search-input { background-color: var(--bg-panel); }
+.search-input:focus { background-color: #ffffff; border-color: var(--color-accent); box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
+html.dark .search-input:focus { background-color: #0f172a; border-color: var(--color-accent); }
+
+.btn-theme-toggle { background: transparent; border: none; color: var(--text-main); font-size: 1.25rem; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.btn-theme-toggle:hover { background-color: var(--bg-surface); }
+.scrollable-main-content { flex: 1; overflow-y: auto; padding: 1.5rem; }
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES & SHARED WIDGET STYLES
+   ========================================================================== */
+.mobile-bottom-navigation-bar { display: none; }
+
+@media (max-width: 992px) {
+    /* Hide the desktop list, but allow the mobile nav wrapped inside it to render */
+    .desktop-nav-fallback { padding: 0 !important; }
+    .sidebar-static-links { display: none !important; }
+    
+    .btn-hamburger { display: flex; }
+    .btn-close-sidebar { display: inline-block; }
+
+    /* FIXED MOBILE SIDEBAR LAYOUT (Left positioning avoids breaking position:fixed children) */
+    #sidebar-drawer {
+        position: fixed; 
+        left: calc(var(--sidebar-width) * -1); 
+        width: var(--sidebar-width);
+        top: 0; 
+        height: 100vh;
+        height: -webkit-fill-available;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        box-shadow: none;
+    }
+    #sidebar-drawer.drawer-open { left: 0; box-shadow: 4px 0 20px rgba(0,0,0,0.2); }
+
+    .sidebar-scroll-content {
+        flex: 1 1 auto !important;
+        overflow-y: auto !important;
+    }
+
+    /* FIXED AVATAR MOBILE POSITION */
+    #sidebar-drawer .avatar-footer-row {
+        flex-shrink: 0 !important;
+        margin-bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background-color: #111827 !important;
+    }
+
+    #sidebar-backdrop.backdrop-active {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4); backdrop-filter: blur(3px); z-index: 90;
+    }
+
+    .scrollable-main-content { 
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); 
+    }
+
+    /* HARDWARE NAVIGATION CHIN ENVIRONMENT TRACKING ENGINE PLACEMENT */
+    .mobile-bottom-navigation-bar {
+        display: block !important;
+        position: fixed; 
+        bottom: 0; 
+        left: 0; 
+        width: 100vw; 
+        height: calc(64px + env(safe-area-inset-bottom, 0px));
+        background-color: var(--bg-app); 
+        border-top: 1px solid var(--border-ui);
+        z-index: 200 !important; 
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    .bottom-nav-list {
+        list-style: none !important; 
+        display: flex !important; 
+        width: 100% !important;
+        height: 64px !important; 
+        margin: 0 !important; 
+        padding: 0 !important;
+        align-items: center !important; 
+        justify-content: space-around !important;
+    }
+
+    .bottom-nav-item { flex: 1 !important; height: 100% !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+
+    .bottom-nav-item a {
+        display: flex !important; 
+        flex-direction: column !important;
+        align-items: center !important; 
+        justify-content: center !important;
+        width: 100% !important; 
+        height: 100% !important; 
+        gap: 4px !important;
+        text-decoration: none !important; 
+        color: var(--text-muted) !important; 
+        transition: all 0.2s ease;
+    }
+    .bottom-nav-item a.active { color: var(--color-accent) !important; }
+
+
+/* Base Icon Wrapper */
+.bottom-nav-icon-dot {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    /* This color is the default state */
+    background-color: var(--text-muted); 
+    
+    /* This creates the icon shape using the dynamic --icon-url from the style attribute */
+    -webkit-mask-image: var(--icon-url);
+    mask-image: var(--icon-url);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    
+    transition: background-color 0.2s ease;
+}
+
+/* Active State: When the link has .active, 
+   we change the background-color of the mask, 
+   not the icon itself. This is perfectly reliable.
+*/
+.bottom-nav-item a.active .bottom-nav-icon-dot {
+    background-color: var(--color-accent);
+}
+
+/* Dark Mode adjustment if needed */
+html.dark .bottom-nav-item a:not(.active) .bottom-nav-icon-dot {
+    background-color: var(--text-muted); /* Dark mode muted color */
+}
+
+
+
+    .bottom-nav-text {
+        font-size: 0.75rem !important; 
+        font-weight: 600 !important; 
+        line-height: 12px !important; 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        text-align: center !important; 
+        display: block !important;
+    }
+    /* This targets only the first character of the element */
+    .bottom-nav-text::first-letter {
+        text-transform: uppercase;
+      }
+
+
+   
+}
+
+
+
+]]></b:skin></head><body><div id="sidebar-backdrop" onclick="toggleSidebarDrawer()"/><div class="app-container"><aside id="sidebar-drawer"><div class="sidebar-header"><div class="brand-logo"><img class="brand-icon" alt="Antinna" expr:src="data:blog.blogspotFaviconUrl"/><span class="brand-text">Antinna</span></div><button class="btn-close-sidebar" onclick="toggleSidebarDrawer()">×</button></div><div class="sidebar-scroll-content"><div class="desktop-nav-fallback"><b:section id="sidebar-primary-links" class="sidebar-shared-nav-section" maxwidgets="1" showaddelement="yes"><b:widget id="LinkList1" type="LinkList" title="Navigation Menu" locked="false" version="2"><b:widget-settings><b:widget-setting name="text-0">house</b:widget-setting><b:widget-setting name="link-0">/</b:widget-setting><b:widget-setting name="text-1">shop</b:widget-setting><b:widget-setting name="link-1">/search/label/Services</b:widget-setting><b:widget-setting name="text-2">fix</b:widget-setting><b:widget-setting name="link-2">/search/label/Salons</b:widget-setting><b:widget-setting name="text-3">cart</b:widget-setting><b:widget-setting name="link-3">/p/bookings.html</b:widget-setting></b:widget-settings><b:includable id="main"><ul class="sidebar-static-links"><b:loop values="data:links" var="link"><li><a class="nav-route-link" expr:href="data:link.target"><data:link.name/></a></li></b:loop></ul><div class="mobile-bottom-navigation-bar"><ul class="bottom-nav-list"><b:loop values="data:links" var="link"><li class="bottom-nav-item"><a class="nav-route-link" expr:href="data:link.target"><b:if cond="data:link.name != &quot; &quot;"><span class="bottom-nav-icon-dot" expr:style="&quot;--icon-url: url(https://api.iconify.design/picon/&quot; + data:link.name + &quot;.svg)&quot;"/><span class="bottom-nav-text"><data:link.name/></span><b:else/><span class="bottom-nav-icon-dot">•</span><span class="bottom-nav-text"><data:link.name/></span></b:if></a></li></b:loop></ul></div></b:includable></b:widget></b:section></div><div class="sidebar-modules-area"><b:section id="sidebar-workspace-links" class="sidebar-modules-section" maxwidgets="1" showaddelement="yes"><b:widget id="LinkList3" type="LinkList" title="Workspace Menu" locked="false" version="2"><b:widget-settings><b:widget-setting name="text-0">Nearby Helpers</b:widget-setting><b:widget-setting name="link-0">#</b:widget-setting><b:widget-setting name="text-1">Active Bookings</b:widget-setting><b:widget-setting name="link-1">#</b:widget-setting><b:widget-setting name="text-2">Customer Reviews</b:widget-setting><b:widget-setting name="link-2">#</b:widget-setting></b:widget-settings><b:includable id="main"><div class="module-wrapper"><button class="module-trigger" onclick="toggleModuleDropdown(&quot;workspace-module&quot;)"><span>Workspace Options</span><span class="arrow-indicator initial-open" id="workspace-module-arrow">▾</span></button><ul class="module-dropdown-list" id="workspace-module"><b:loop values="data:links" var="link"><li><a class="nav-route-link" expr:href="data:link.target"><data:link.name/></a></li></b:loop></ul></div></b:includable></b:widget></b:section></div><div class="sidebar-legal-area"><b:section id="sidebar-legal-links" class="sidebar-legal-section" maxwidgets="1" showaddelement="yes"><b:widget id="LinkList2" type="LinkList" title="Legal Pages Menu" locked="false" version="2"><b:widget-settings><b:widget-setting name="text-0">Privacy Policy</b:widget-setting><b:widget-setting name="link-0">/p/privacy-policy.html</b:widget-setting><b:widget-setting name="text-1">Terms &amp; Conditions</b:widget-setting><b:widget-setting name="link-1">/p/terms-conditions.html</b:widget-setting><b:widget-setting name="text-2">Refund Policy</b:widget-setting><b:widget-setting name="link-2">/p/refund-cancellation.html</b:widget-setting><b:widget-setting name="text-3">Disclaimer</b:widget-setting><b:widget-setting name="link-3">/p/disclaimer.html</b:widget-setting></b:widget-settings><b:includable id="main"><div class="module-wrapper"><button class="module-trigger" onclick="toggleModuleDropdown(&quot;legal-policy-module&quot;)"><span>Policies &amp; Legal</span><span class="arrow-indicator" id="legal-policy-module-arrow">▾</span></button><ul class="module-dropdown-list ui-hidden" id="legal-policy-module"><b:loop values="data:links" var="link"><li><a class="nav-route-link" expr:href="data:link.target"><data:link.name/></a></li></b:loop></ul></div></b:includable></b:widget></b:section></div><div class="sidebar-social-wrapper"><a aria-label="YouTube" class="social-icon-link" href="https://www.youtube.com/@Antinna" target="_blank"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.5v-7L16 12l-6.25 3.5z"/></svg></a><a aria-label="Instagram" class="social-icon-link" href="https://www.instagram.com/antinna.yt" target="_blank"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a aria-label="Facebook" class="social-icon-link" href="https://www.facebook.com/profile.php?id=100082961891641" target="_blank"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a aria-label="Play Store" class="social-icon-link" href="https://play.google.com/store/apps/dev?id=7417258411166270372" target="_blank"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></a></div></div><div class="avatar-footer-row"><div class="avatar-left-info"><div class="user-avatar-circle"><span>U</span></div><div class="user-meta-strings"><span class="user-display-name">Guest User</span><span class="user-display-role">Workspace Client</span></div></div><button aria-label="Settings" class="btn-settings-gear" onclick="alert(&quot;Settings panel active!&quot;)">⚙</button></div></aside><div class="main-view-wrapper"><header class="top-navbar-header"><div class="header-left"><button class="btn-hamburger" onclick="toggleSidebarDrawer()">☰</button></div><div class="header-center-search"><div class="search-container"><div class="search-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></div><form action="/search" method="get"><input class="search-input" name="q" placeholder="Search marketplace &amp; services..." type="text"/></form></div></div><div class="header-right"><button class="btn-theme-toggle" id="theme-mode-switcher"><span class="mode-icon icon-moon">☾</span><span class="mode-icon icon-sun ui-hidden">☼</span></button></div></header><main class="scrollable-main-content"><b:section id="main-feed-stream" class="main-feed-section" showaddelement="yes"/></main></div></div><script>//<![CDATA[
+           /**
+         * Toggles responsive state for the mobile drawer container panel.
+         */
+        function toggleSidebarDrawer() {
+            const sidebar = document.getElementById('sidebar-drawer');
+            const backdrop = document.getElementById('sidebar-backdrop');
+            
+            if (sidebar && backdrop) {
+                sidebar.classList.toggle('drawer-open');
+                backdrop.classList.toggle('backdrop-active');
+            }
+        }
+
+        /**
+         * Handles module option dropdown panel expansion and triggers smooth arrow transforms dynamically.
+         * @param {string} moduleId - Target DOM container node identifier token string.
+         */
+        function toggleModuleDropdown(moduleId) {
+            const targetModule = document.getElementById(moduleId);
+            const arrowIndicator = document.getElementById(moduleId + '-arrow');
+            
+            if (targetModule) {
+                const isCurrentlyHidden = targetModule.classList.contains('ui-hidden');
+                
+                if (isCurrentlyHidden) {
+                    targetModule.classList.remove('ui-hidden');
+                    if (arrowIndicator) {
+                        arrowIndicator.style.transform = 'rotate(0deg)';
+                    }
+                } else {
+                    targetModule.classList.add('ui-hidden');
+                    if (arrowIndicator) {
+                        arrowIndicator.style.transform = 'rotate(-90deg)';
+                    }
+                }
+            }
+        }
+
+        /**
+         * Global Routing Logic Engine: Automatically scans, parses, and assigns 
+         * active highlight states based on browser route path locations.
+         */
+        function highlightActivePathsByRoute() {
+            const currentSystemPathname = window.location.pathname;
+            const structuralNavLinks = document.querySelectorAll('.nav-route-link');
+            
+            structuralNavLinks.forEach(linkElement => {
+                const assignedTargetHref = linkElement.getAttribute('href');
+                
+                if (assignedTargetHref) {
+                    // Remove parameters and hashes to cleanly match endpoints
+                    const standardizedHref = assignedTargetHref.trim().split('?')[0].split('#')[0];
+                    
+                    if (currentSystemPathname === standardizedHref) {
+                        linkElement.classList.add('active');
+                    } else {
+                        linkElement.classList.remove('active');
+                    }
+                }
+            });
+        }
+
+        /**
+         * Global Workspace Listeners Initializer Pipeline.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtn = document.getElementById('theme-mode-switcher');
+            const htmlEl = document.documentElement;
+            
+            // Automatically match, map, and highlight routes across navigation groups
+            highlightActivePathsByRoute();
+
+            if (themeBtn) {
+                themeBtn.addEventListener('click', () => {
+                    const isDark = htmlEl.classList.contains('dark');
+                    if (isDark) {
+                        htmlEl.classList.remove('dark');
+                        localStorage.setItem('antinna-theme', 'light');
+                    } else {
+                        htmlEl.classList.add('dark');
+                        localStorage.setItem('antinna-theme', 'dark');
+                    }
+                    syncThemeIconDisplays();
+                });
+            }
+
+            function syncThemeIconDisplays() {
+                const moonIcon = document.querySelector('.icon-moon');
+                const sunIcon = document.querySelector('.icon-sun');
+                
+                if (moonIcon && sunIcon) {
+                    if (htmlEl.classList.contains('dark')) {
+                        moonIcon.classList.add('ui-hidden');
+                        sunIcon.classList.remove('ui-hidden');
+                    } else {
+                        moonIcon.classList.remove('ui-hidden');
+                        sunIcon.classList.add('ui-hidden');
+                    }
+                }
+            }
+        });
+      
+//]]></script></body></html>
