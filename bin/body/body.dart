@@ -114,6 +114,21 @@ class BloggerBody implements Component {
         });
       ''',
       ),
+
+      ///
+      Script(
+        type: "module",
+        src: "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js",
+      ),
+      Script(
+        type: "module",
+        src: "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js",
+      ),
+      Script(
+        type: "module",
+        src: "https://www.gstatic.com/firebasejs/11.6.1/firebase-messaging.js",
+      ),
+
       // BClientScript('bin/body/script/main.dart', contentInCDATA: true),
     ];
   }

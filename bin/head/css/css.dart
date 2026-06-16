@@ -202,7 +202,55 @@ html.dark .avatar-footer-row { background-color: rgba(0, 0, 0, 0.2); }
 
 .header-center-search { flex: 1; display: flex; align-items: center; justify-content: center; }
 .search-container { position: relative; width: 100%; max-width: 20rem; }
-.search-icon { position: absolute; top: 50%; left: 0.75rem; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; display: flex; align-items: center; }
+.search-form {
+    position: relative;
+    width: 100%;
+}
+.search-icon {
+pointer-events: none;
+opacity: .7;
+ position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    padding: 0;
+    margin: 0;
+
+    color: var(--text-muted);
+    cursor: pointer;
+
+    transition: color .2s ease;
+}
+
+.search-icon:focus, .search-icon:active {
+
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.search-form:focus-within .search-icon {
+    opacity: 1;
+    pointer-events: auto;
+    color: var(--color-accent);
+}
 .search-icon svg { width: 1.25rem; height: 1.25rem; }
 .search-input {
     width: 100%; background-color: var(--bg-surface); border: 2px solid transparent;

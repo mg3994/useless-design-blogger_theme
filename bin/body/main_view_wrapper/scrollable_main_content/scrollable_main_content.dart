@@ -14,6 +14,7 @@ final scrollable_main_content = Main(
       id: 'main-feed-stream',
       showaddelement: true,
       children: [
+        // <b:widget id='Text1' for messafges at top
         // ...... work here for future TODO:
       ],
     ),
