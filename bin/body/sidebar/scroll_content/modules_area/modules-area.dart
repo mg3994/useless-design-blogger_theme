@@ -78,7 +78,14 @@ final sidebar_modules_area = Div(
                         'onclick': 'toggleModuleDropdown("workspace-module")',
                       },
                       children: [
-                        Span(children: ["Workspace Options".component]),
+                        Span(
+                          children: [
+                            BEval(
+                              expr:
+                                  'data:title != "" and data:title != " " ? data:title : ""',
+                            ),
+                          ],
+                        ),
                         Span(
                           attributes: {
                             'class': 'arrow-indicator initial-open',
@@ -101,7 +108,10 @@ final sidebar_modules_area = Div(
                             Li(
                               children: [
                                 A(
-                                  attributes: {'class':'nav-route-link','expr:href': 'data:link.target'},
+                                  attributes: {
+                                    'class': 'nav-route-link',
+                                    'expr:href': 'data:link.target',
+                                  },
                                   children: [BData(value: 'link.name')],
                                 ),
                               ],
