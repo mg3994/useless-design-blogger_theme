@@ -151,11 +151,42 @@ body {
 .module-dropdown-list li a.active { color: #ffffff !important; font-weight: 600; background-color: rgba(255, 255, 255, 0.1); }
 
 .sidebar-social-wrapper {
-    display: flex; align-items: center; justify-content: flex-start; gap: 1.15rem;
-    padding: 1.5rem 1.25rem 0.5rem 1.25rem; margin-top: 0.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; /* Ensure the container takes full width of the parent */
+    padding: 1.5rem 1.25rem 0.5rem 1.25rem; 
+    margin-top: 0.5rem; 
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-.social-icon-link { color: rgba(255, 255, 255, 0.5); display: inline-flex; align-items: center; justify-content: center; transition: color 0.2s, transform 0.2s; }
-.social-icon-link:hover { color: var(--color-accent); transform: translateY(-2px); }
+/* Ensure the widget inner container inherits the flex properties */
+.sidebar-social-wrapper .widget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.social-icon-link { 
+ 
+ display: inline-block;
+ width: 24px;  /* Increased size */
+ height: 24px;
+ background-color: currentColor; /* Inherits color from text */
+ -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+ color: rgba(255, 255, 255, 0.5);
+ transition: color 0.2s, 
+ transform 0.2s; 
+}
+.social-icon-link:hover { 
+color: var(--color-accent); 
+transform: translateY(-2px); 
+}
 
 /* ==========================================================================
    FIXED USER PROFILE ELEMENT ROW 
