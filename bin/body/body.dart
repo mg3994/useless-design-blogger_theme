@@ -11,6 +11,7 @@ class BloggerBody implements Component {
       app_container,
       //js scripts
       theme_mode_sync_script,
+      firebase_and_toast,
 
       ///
       // Script(
