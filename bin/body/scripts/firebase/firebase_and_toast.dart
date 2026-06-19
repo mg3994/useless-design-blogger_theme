@@ -1,6 +1,7 @@
 import 'package:blogger_theme/blogger_theme.dart';
 
 final firebase_and_toast = Script(
+  type: "module",
   contentInCDATA: true,
   content: r''' import {
       initializeApp,
