@@ -691,6 +691,123 @@ html.dark .bottom-nav-item a:not(.active) .bottom-nav-icon-dot {
 }
 
 
+/* ==========================================================================
+               Cookie Choices
+   ========================================================================== */
+
+/* --- Compact Centered Box --- */
+.cookie-choices-info {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: auto !important; /* Perfect centering */
+    width: calc(100% - 32px) !important; 
+    max-width: 380px !important; 
+    height: fit-content !important; 
+    background-color: var(--bg-surface) !important; 
+    border: 1px solid var(--border-ui) !important; 
+    border-radius: 16px !important; 
+    padding: 20px !important;
+    z-index: 999999 !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
+    box-sizing: border-box !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* --- Full Screen Backdrop Blur Overlay (Lightened) --- */
+.cookie-choices-info::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.15) !important; /* Slightly lighter tint */
+    backdrop-filter: blur(3px) !important; /* Reduced from 8px to a subtle 3px */
+    -webkit-backdrop-filter: blur(3px) !important; /* Safari compatibility */
+    z-index: -1 !important; 
+    pointer-events: none !important; 
+}
+
+/* --- Inner Layout Wrapper --- */
+.cookie-choices-info .cookie-choices-inner {
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important; 
+}
+
+/* --- Content Text --- */
+.cookie-choices-info .cookie-choices-text {
+    display: block !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    color: var(--text-main) !important; 
+    text-align: center !important; 
+}
+
+/* --- Flexible Button Container --- */
+.cookie-choices-info .cookie-choices-buttons {
+    display: flex !important;
+    flex-direction: row !important; 
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+/* --- Base Button Styling --- */
+.cookie-choices-info .cookie-choices-button {
+    flex: 1 !important; 
+    text-align: center !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s, opacity 0.2s !important;
+    display: inline-block !important;
+    box-sizing: border-box !important;
+}
+
+/* --- Secondary Button: Privacy Policy --- */
+.cookie-choices-info .cookie-choices-button:first-child {
+    background-color: transparent !important;
+    color: var(--text-muted) !important;
+    border: 1px solid var(--border-ui) !important;
+}
+
+.cookie-choices-info .cookie-choices-button:first-child:hover {
+    background-color: var(--bg-app) !important;
+    color: var(--text-main) !important;
+}
+
+/* --- Primary Button: Got it! --- */
+#cookieChoiceDismiss {
+    background-color: var(--color-accent) !important; 
+    color: var(--text-light) !important;
+    border: 1px solid var(--color-accent) !important;
+}
+
+#cookieChoiceDismiss:hover {
+    opacity: 0.9 !important;
+    cursor: pointer !important;
+}
+
+/* --- Mobile Fixes (For ultra-small screens) --- */
+@media (max-width: 360px) {
+    .cookie-choices-info {
+        padding: 16px !important;
+    }
+    .cookie-choices-info .cookie-choices-buttons {
+        flex-direction: column !important; 
+    }
+}
+
+
 ''', variables: bskin_variables);
 
 
