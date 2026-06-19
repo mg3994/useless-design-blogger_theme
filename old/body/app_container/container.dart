@@ -7,4 +7,5 @@ final app_container = Div(attributes: {
 }, children: [
   sidebar_drawer,
   main_view_wrapper,
+  // account-settings-modal-backdrop
 ]);

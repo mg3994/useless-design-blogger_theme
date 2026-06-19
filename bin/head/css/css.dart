@@ -441,6 +441,255 @@ html.dark .bottom-nav-item a:not(.active) .bottom-nav-icon-dot {
    
 }
 
+/* ==========================================================================
+   GOOGLE LOGIN & PROFILE SETTINGS MODAL
+   ========================================================================== */
+.btn-google-login {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  justify-content: center;
+}
+.btn-google-login:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+.btn-google-login svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Settings Modal styles */
+.settings-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.settings-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.settings-modal {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  border: 1px solid var(--border-ui);
+  width: 95%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.settings-modal-backdrop.active .settings-modal {
+  transform: scale(1);
+}
+.settings-modal-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border-ui);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.settings-modal-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.settings-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.settings-modal-close:hover {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+}
+.settings-modal-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.settings-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.settings-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+}
+.settings-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.settings-email {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+.settings-phone {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-surface);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-ui);
+}
+.settings-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.settings-detail-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.settings-uid-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-ui);
+  padding: 8px 12px;
+  border-radius: 10px;
+  gap: 8px;
+}
+.settings-uid-value {
+  font-family: monospace;
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.btn-copy-settings-uid {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+.btn-copy-settings-uid:hover {
+  color: var(--color-accent);
+}
+.settings-modal-footer {
+  padding: 1.25rem;
+  border-top: 1px solid var(--border-ui);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.btn-modal-logout {
+  width: 100%;
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-modal-logout:hover {
+  background-color: #dc2626;
+}
+
+/* Toast Notification Styles */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2500;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.toast {
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
 
 ''', variables: bskin_variables);
 
