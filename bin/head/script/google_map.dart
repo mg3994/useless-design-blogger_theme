@@ -14,4 +14,3 @@ final google_map_head_script = [
     ''',
   ),
 ];
-s
