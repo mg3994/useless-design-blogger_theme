@@ -9,6 +9,13 @@ import 'script/script.dart';
 class BloggerHead implements Component {
   @override
   Iterable<Component> build() {
-    return [themeScript, cookieEUScript, ...seo_head, title_head, bskin_head];
+    return [
+      themeScript,
+      cookieEUScript,
+      ...seo_head,
+      title_head,
+      bskin_head,
+      ...google_map_head_script,
+    ];
   }
 }

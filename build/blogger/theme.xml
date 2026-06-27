@@ -1541,23 +1541,53 @@ html.dark .bottom-nav-item a:not(.active) .bottom-nav-icon-dot {
           modalUnlinkContainer.innerHTML = `
             <div class="unlink-action-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border-ui);">
               <span style="font-size: 0.85rem; color: var(--text-muted);">Phone Authentication Active</span>
-              <button class="btn-unlink-phone" id="modal-unlink-phone-btn" style="background: transparent; color: #ef4444; border: 1px solid #ef4444; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-weight: 600;">
+              <button class="btn-unlink-phone" id="modal-unlink-phone-btn" style="background: transparent; color: #ef4444; border: 1px solid #ef4444; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
                 Unlink Phone
               </button>
             </div>
           `;
           
-          // Attach internal transactional event binding for the unlinking pipeline
-          document.getElementById('modal-unlink-phone-btn')?.addEventListener('click', async () => {
+          const unlinkBtn = document.getElementById('modal-unlink-phone-btn');
+          
+          unlinkBtn?.addEventListener('click', async () => {
             if (confirm("Are you sure you want to remove phone authentication from this profile?")) {
               try {
+                // Set Loading State
+                unlinkBtn.disabled = true;
+                unlinkBtn.style.opacity = "0.6";
+                unlinkBtn.style.cursor = "not-allowed";
+                unlinkBtn.innerHTML = `
+                  <svg class="animate-spin" viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="3" fill="none" style="animation: spin 1s linear infinite;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+                  </svg>
+                  <span>Unlinking...</span>
+                `;
+
                 const { unlink } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js");
                 await unlink(user, 'phone');
+                
                 window.showToast("Phone number association removed successfully.", "success");
-                window.closeSettingsModal();
+                
+                // Instantly clean up UI variants without breaking modal visibility context
+                if (modalPhoneContainer) modalPhoneContainer.classList.add('ui-hidden');
+                if (modalUnlinkContainer) {
+                  modalUnlinkContainer.classList.add('ui-hidden');
+                  modalUnlinkContainer.innerHTML = '';
+                }
+                
+                // Update global tracking context indicators
+                window.hasPhoneLinked = false;
+
               } catch (err) {
                 console.error("Provider mutation failed:", err);
                 window.showToast("Failed to unlink credential provider.", "error");
+                
+                // Reset Loading State on Failure
+                unlinkBtn.disabled = false;
+                unlinkBtn.style.opacity = "1";
+                unlinkBtn.style.cursor = "pointer";
+                unlinkBtn.innerHTML = 'Unlink Phone';
               }
             }
           });
