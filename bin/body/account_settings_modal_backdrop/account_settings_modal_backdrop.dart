@@ -81,6 +81,14 @@ final account_settings_modal_backdrop = Div(
                     Span(attributes: {"id": "modal-user-phone"}),
                   ],
                 ),
+                // id="modal-user-unlink-container" class="ui-hidden" style="width: 100%;"
+                Div(
+                  attributes: {
+                    'id': "modal-user-unlink-container",
+                    'class': "ui-hidden",
+                    'style': "width: 100%;",
+                  },
+                ),
               ],
             ),
 

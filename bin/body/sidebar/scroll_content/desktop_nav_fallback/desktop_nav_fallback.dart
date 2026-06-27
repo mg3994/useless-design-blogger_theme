@@ -35,23 +35,20 @@ final desktop_nav_fallback = Div(
                 //
                 // BWidgetSetting(name: 'icon-1', children: [Text('🛠️')]),
                 BWidgetSetting(name: 'text-1', children: [Text("shop")]),
-                BWidgetSetting(
-                  name: 'link-1',
-                  children: [Text("/search/label/Services")],
-                ),
+                BWidgetSetting(name: 'link-1', children: [Text("/search/")]),
                 //
                 // BWidgetSetting(name: 'icon-2', children: [Text('🛒')]),
                 BWidgetSetting(name: 'text-2', children: [Text("fix")]),
                 BWidgetSetting(
                   name: 'link-2',
-                  children: [Text("/search/label/Salons")],
+                  children: [Text("/search/label/Services")],
                 ),
                 //
                 // BWidgetSetting(name: 'icon-2', children: [Text("📦")]),
-                BWidgetSetting(name: 'text-3', children: [Text("cart")]),
+                BWidgetSetting(name: 'text-3', children: [Text("Profile")]),
                 BWidgetSetting(
                   name: 'link-3',
-                  children: [Text("/p/bookings.html")],
+                  children: [Text("/p/profile.html")],
                 ),
               ],
             ),

@@ -15,6 +15,8 @@ final firebase_and_toast = Script(
       signOut,
       setPersistence,
       browserLocalPersistence,
+      RecaptchaVerifier,
+      linkWithPhoneNumber,
     } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
     import {
       getMessaging,
@@ -49,6 +51,10 @@ final firebase_and_toast = Script(
       ? initializeApp(firebaseConfig)
       : getApps()[0];
     const auth = getAuth(app);
+
+    window.firebaseAuth = auth; // Expose for linking
+    window.RecaptchaVerifier = RecaptchaVerifier;
+    window.linkWithPhoneNumber = linkWithPhoneNumber;
     
     // Set persistence to LOCAL so session is remembered
     try {
@@ -142,7 +148,15 @@ final firebase_and_toast = Script(
     async function updateWindowAuthData(user, deviceToken = null) {
       window.isLoggedIn = !!user;
       window.firebaseUid = user ? user.uid : null;
+      let linkedPhoneNumber = null;
       if (user) {
+          linkedPhoneNumber = user.phoneNumber;
+          if (!linkedPhoneNumber && user.providerData) {
+            const providerMatch = user.providerData.find(info => info.phoneNumber);
+            if (providerMatch) linkedPhoneNumber = providerMatch.phoneNumber;
+          }
+          window.hasPhoneLinked = !!linkedPhoneNumber;
+
         try {
           window.firebaseAuthToken = await user.getIdToken();
         } catch (e) {
@@ -151,7 +165,9 @@ final firebase_and_toast = Script(
         }
       } else {
         window.firebaseAuthToken = null;
+        window.hasPhoneLinked = false;
       }
+
       if (deviceToken) {
         window.firebaseRemoteDeviceToken = deviceToken;
       } else if (!user) {
@@ -446,6 +462,8 @@ final firebase_and_toast = Script(
       const modalPhone = document.getElementById('modal-user-phone');
       const modalUid = document.getElementById('modal-user-uid');
 
+      const modalUnlinkContainer = document.getElementById('modal-user-unlink-container');
+
       if (modalAvatar) modalAvatar.src = userAvatar;
       if (modalName) modalName.textContent = userName;
       if (modalEmail) modalEmail.textContent = userEmail;
@@ -454,9 +472,49 @@ final firebase_and_toast = Script(
       if (linkedPhoneNumber) {
         if (modalPhone) modalPhone.textContent = linkedPhoneNumber;
         if (modalPhoneContainer) modalPhoneContainer.classList.remove('ui-hidden');
+      
+
+       // Dynamically append an unlinking management interface state if configured
+        if (modalUnlinkContainer) {
+          modalUnlinkContainer.classList.remove('ui-hidden');
+          modalUnlinkContainer.innerHTML = `
+            <div class="unlink-action-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border-ui);">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Phone Authentication Active</span>
+              <button class="btn-unlink-phone" id="modal-unlink-phone-btn" style="background: transparent; color: #ef4444; border: 1px solid #ef4444; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-weight: 600;">
+                Unlink Phone
+              </button>
+            </div>
+          `;
+          
+          // Attach internal transactional event binding for the unlinking pipeline
+          document.getElementById('modal-unlink-phone-btn')?.addEventListener('click', async () => {
+            if (confirm("Are you sure you want to remove phone authentication from this profile?")) {
+              try {
+                const { unlink } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js");
+                await unlink(user, 'phone');
+                window.showToast("Phone number association removed successfully.", "success");
+                window.closeSettingsModal();
+              } catch (err) {
+                console.error("Provider mutation failed:", err);
+                window.showToast("Failed to unlink credential provider.", "error");
+              }
+            }
+          });
+        }
       } else {
         if (modalPhoneContainer) modalPhoneContainer.classList.add('ui-hidden');
+        if (modalUnlinkContainer) {
+          modalUnlinkContainer.classList.add('ui-hidden');
+          modalUnlinkContainer.innerHTML = '';
+        }
       }
+
+
+
+
+      
+
+      
     }
 
     // Modal Copy UID button binding
