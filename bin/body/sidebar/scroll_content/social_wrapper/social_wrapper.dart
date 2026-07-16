@@ -27,7 +27,7 @@ final sidebar_social_wrapper = BSection(
       id: 'LinkList4',
       type: 'LinkList',
       locked: false,
-      title: 'Social Icons',
+      title: 'Connect with us',
       version: 2,
       children: [
         BWidgetSettings(
@@ -94,29 +94,42 @@ final sidebar_social_wrapper = BSection(
         BIncludable(
           id: 'main',
           children: [
-            //here
-            BLoop(
-              values: 'data:links',
-              varName: 'link',
+            H4(
               children: [
-                A(
-                  attributes: {
-                    'class': 'social-icon-link',
-                    'expr:href': 'data:link.target',
-                    'target': '_blank',
-                    'expr:style':
-                        '"-webkit-mask-image: url(" + data:link.name + "); mask-image: url(" + data:link.name + ");"',
-                  },
-                  // children: [
-                  //   Img(
-                  //     attributes: {
-                  //       'expr:src': 'data:link.name',
-                  //       'width': '18',
-                  //       'height': '18',
-                  //       'alt': 'Social Icon',
-                  //     },
-                  //   ),
-                  // ],
+                BEval(
+                  expr:
+                      'data:title != "" and data:title != " " ? data:title : ""',
+                ),
+              ],
+            ),
+            //here
+            Div(
+              attributes: {"class": "social-icons-row"},
+              children: [
+                BLoop(
+                  values: 'data:links',
+                  varName: 'link',
+                  children: [
+                    A(
+                      attributes: {
+                        'class': 'social-icon-link',
+                        'expr:href': 'data:link.target',
+                        'target': '_blank',
+                        'expr:style':
+                            '"-webkit-mask-image: url(" + data:link.name + "); mask-image: url(" + data:link.name + ");"',
+                      },
+                      // children: [
+                      //   Img(
+                      //     attributes: {
+                      //       'expr:src': 'data:link.name',
+                      //       'width': '18',
+                      //       'height': '18',
+                      //       'alt': 'Social Icon',
+                      //     },
+                      //   ),
+                      // ],
+                    ),
+                  ],
                 ),
               ],
             ),

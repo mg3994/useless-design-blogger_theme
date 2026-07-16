@@ -71,6 +71,24 @@ final theme_mode_sync_script = Script(
         document.addEventListener('DOMContentLoaded', () => {
             const themeBtn = document.getElementById('theme-mode-switcher');
             const htmlEl = document.documentElement;
+            // 1. Resolve Initial Theme State if LocalStorage is empty
+            const savedTheme = localStorage.getItem('antinna-theme');
+            if (savedTheme === 'dark') {
+                htmlEl.classList.add('dark');
+            } else if (savedTheme === 'light') {
+                htmlEl.classList.remove('dark');
+            } else {
+                // Fallback: Check if user's operating system/browser prefers dark mode
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    htmlEl.classList.add('dark');
+                } else {
+                    // If your application defaults to light mode when empty, keep it removed
+                    htmlEl.classList.remove('dark');
+                }
+            }
+
+            // 2. Run icon synchronization immediately on startup
+            syncThemeIconDisplays();
             
             // Automatically match, map, and highlight routes across navigation groups
             highlightActivePathsByRoute();

@@ -151,9 +151,9 @@ body {
 .module-dropdown-list li a.active { color: #ffffff !important; font-weight: 600; background-color: rgba(255, 255, 255, 0.1); }
 
 .sidebar-social-wrapper {
-    display: flex; 
+  /*   display: flex; 
     align-items: center; 
-    justify-content: space-between; 
+    justify-content: space-between;  */
     width: 100%; /* Ensure the container takes full width of the parent */
     padding: 1.5rem 1.25rem 0.5rem 1.25rem; 
     margin-top: 0.5rem; 
@@ -161,12 +161,32 @@ body {
 }
 /* Ensure the widget inner container inherits the flex properties */
 .sidebar-social-wrapper .widget {
+  /*  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+}
+/* Optional styling to match standard system sidebar labels */
+.sidebar-social-wrapper h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+/* Dedicated horizontal row for links */
+.social-icons-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
-
 .social-icon-link { 
  
  display: inline-block;
@@ -221,8 +241,15 @@ html.dark .avatar-footer-row { background-color: rgba(0, 0, 0, 0.2); }
    ========================================================================== */
 .main-view-wrapper { flex: 1; display: flex; flex-direction: column; height: 100vh; background-color: var(--bg-surface); overflow: hidden; position: relative; }
 .top-navbar-header {
-    height: var(--header-height); min-height: var(--header-height); background-color: var(--bg-app);
-    border-bottom: 1px solid var(--border-ui); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    height: var(--header-height); 
+    min-height: var(--header-height); 
+    background-color: var(--bg-app);
+    border-bottom: 1px solid var(--border-ui); 
+    padding: 0 1.5rem; 
+    display: grid; 
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center; 
+    gap: 1rem;
 }
 .header-left, .header-right { display: flex; align-items: center; height: 100%; }
 
@@ -231,7 +258,11 @@ html.dark .avatar-footer-row { background-color: rgba(0, 0, 0, 0.2); }
     cursor: pointer; display: none; height: 40px; width: 40px; align-items: center; justify-content: center;
 }
 
-.header-center-search { flex: 1; display: flex; align-items: center; justify-content: center; }
+.header-center-search { 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+}
 .search-container { position: relative; width: 100%; max-width: 20rem; }
 .search-form {
     position: relative;
@@ -290,8 +321,8 @@ opacity: .7;
 html.dark .search-input { background-color: var(--bg-panel); }
 .search-input:focus { background-color: #ffffff; border-color: var(--color-accent); box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
 html.dark .search-input:focus { background-color: #0f172a; border-color: var(--color-accent); }
-
-.btn-theme-toggle { background: transparent; border: none; color: var(--text-main); font-size: 1.25rem; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+/* TODO: fix  background-color: var(--bg-surface); */
+.btn-theme-toggle { background-color: var(--bg-surface); border: none; color: var(--text-main); font-size: 1.25rem; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
 .btn-theme-toggle:hover { background-color: var(--bg-surface); }
 .scrollable-main-content { flex: 1; overflow-y: auto; padding: 1.5rem; }
 
