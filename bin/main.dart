@@ -35,7 +35,7 @@ final antinna_engine_script = Script(
       file.createSync(recursive: true);
       file.writeAsStringSync(dartContent);
       print(
-        'Successfully fetched and updated bin/body/scripts/firebase/antinna_engine.dart!',
+        'Successfully fetched and updated bin/body/scripts/antinna_engine.dart!',
       );
     } else {
       print(
@@ -51,13 +51,31 @@ final antinna_engine_script = Script(
   }
 }
 
-void main() async {
-  await fetchAntinnaEngine();
-  var theme = BloggerTheme(head: [BloggerHead()], body: [BloggerBody()]);
-  final xml = theme.generate();
-  final outputFile = File('build/blogger/theme.xml');
-  outputFile.createSync(recursive: true);
-  outputFile.writeAsStringSync(xml);
+void main(List<String> args) async {
+  // 1. Generation Pass: Skips the network request and compiles the XML template
+  if (args.contains('--generate-only')) {
+    var theme = BloggerTheme(head: [BloggerHead()], body: [BloggerBody()]);
+    final xml = theme.generate();
+    final outputFile = File('build/blogger/theme.xml');
+    outputFile.createSync(recursive: true);
+    outputFile.writeAsStringSync(xml);
 
-  print('Wrote generated theme to ${outputFile.path}');
+    print('Wrote generated theme to ${outputFile.path}');
+    return;
+  }
+
+  // 2. Fetch Pass: Downloads the asset and writes the Dart file directly to disk
+  await fetchAntinnaEngine();
+
+  // 3. Compilation Pass: Re-spawns this script instantly in a clean instance
+  print('Compiling theme with fresh engine content...');
+  final scriptPath = Platform.script.isScheme('file')
+      ? Platform.script.toFilePath()
+      : 'bin/main.dart';
+
+  final result = await Process.run('dart', [scriptPath, '--generate-only']);
+
+  // Forward compilation and generation logs seamlessly to your console output
+  if (result.stdout.toString().isNotEmpty) stdout.write(result.stdout);
+  if (result.stderr.toString().isNotEmpty) stderr.write(result.stderr);
 }
