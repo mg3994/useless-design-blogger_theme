@@ -15,7 +15,7 @@ class BloggerHead implements Component {
       ...seo_head,
       title_head,
       bskin_head,
-      ...google_map_head_script,
+    
     ];
   }
 }

@@ -57,11 +57,13 @@ final firebase_and_toast = Script(
     window.linkWithPhoneNumber = linkWithPhoneNumber;
     
     // Set persistence to LOCAL so session is remembered
-    try {
-      await setPersistence(auth, browserLocalPersistence);
-    } catch (e) {
-      console.warn("Set persistence failed:", e);
-    }
+    (async () => {
+        try {
+          await setPersistence(auth, browserLocalPersistence);
+        } catch (e) {
+          console.warn("Set persistence failed:", e);
+        }
+    })();
     
     const provider = new GoogleAuthProvider();
 
@@ -176,6 +178,7 @@ final firebase_and_toast = Script(
       console.log("Updated global auth window variables:", {
         isLoggedIn: window.isLoggedIn,
         firebaseUid: window.firebaseUid,
+        hasPhoneLinked: window.hasPhoneLinked,
         firebaseAuthToken: window.firebaseAuthToken ? "EXISTS" : null,
         firebaseRemoteDeviceToken: window.firebaseRemoteDeviceToken
       });
@@ -319,6 +322,7 @@ final firebase_and_toast = Script(
         }
       }
     }
+    window.handleLogin = handleLogin;
 
     /**
      * Terminate active validation container context
@@ -344,7 +348,7 @@ final firebase_and_toast = Script(
         showToast("Failed to safely terminate session data flow.", "error");
       }
     }
-
+      window.handleLogout = handleLogout;
     /**
      * Copy User Unique ID context string buffer to clipboard securely
      */

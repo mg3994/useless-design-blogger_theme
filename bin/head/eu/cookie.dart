@@ -6,7 +6,9 @@ final cookieEUScript = Script(
     Text('close:" Got it! ",\n'),
     Text('learn: "Privacy Policy",\n'),
     Text('link: "'),
-    BData(value: 'blog.canonicalHomepageUrl'),
-    Text('p/privacy.html"\n  };\n'),
+    // BData(value: 'blog.canonicalHomepageUrl'),
+    Text('https://policies.google.com/technologies/cookies"\n  };\n'),
+
+    // Text('p/privacy.html"\n  };\n'),
   ],
 );
